@@ -13,6 +13,8 @@ triple quote at end
 this is the structure for multi line comment
 
 """
+# Do not Give Space before any Print Statement
+#All the Print statements should be in one line 
 
 print("TechClub!")
 print("Club of Creative Students")
