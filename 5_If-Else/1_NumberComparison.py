@@ -14,6 +14,3 @@ if price > 100:
     diff = price -100
     print("The Difference in price is : " + str(diff))
     
-else:
-    print("I am buying the product!!")
-    print("Price is in my budget")
