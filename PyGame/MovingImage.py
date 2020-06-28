@@ -47,6 +47,12 @@ stepNum=1
 EventStatus=""
 cellX=0
 cellY=0
+
+cellYRotate = 15
+cellXRotate = 15
+angle=0
+
+state=""
 while True:
     
     
@@ -64,17 +70,33 @@ while True:
     if EventStatus == "Quit":
         break
     
+    
     screen.blit(screenImg,(0,0))
     
-    # screen.blit(botImg,(10,10))
-    rotator.blitRotate(screen,botImg,(15,45),180)
-    
-    # if cellY<=420:
-    #     screen.blit(botImg,(0,cellY))
-    #     cellY=cellY+30
+    #To Move Image in y direction till it reaches end and then move in x direction
+    if cellY <=420:
+        cellY=cellY+30
         
-    # else:
-    #     screen.blit(botImg,(cellX,cellY))
-    #     cellX=cellX+30
- 
-   
+        
+    elif cellX<=420:
+        cellX=cellX+30
+    else:
+        state="done"
+       
+    
+    
+    screen.blit(botImg,(cellX,cellY))
+    
+    #-------------------------------------------
+    
+    #To Move as well as Rotate Image
+    if state=="done":
+        if cellYRotate <=420:
+            cellYRotate=cellYRotate+30
+            angle=180
+            
+        else:
+            cellXRotate=cellXRotate+30
+            angle=270
+            
+        rotator.blitRotate(screen,botImg,(cellXRotate,cellYRotate),angle)
